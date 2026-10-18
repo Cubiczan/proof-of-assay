@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "manual",
+    "system_resources": {"required_vram": 8192}
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "proof-of-assay-vllm",
+      "args": {
+        "image": "vllm/vllm-openai:latest",
+        "cmd": ["--model", "Qwen/Qwen2.5-1.5B-Instruct", "--port", "8000", "--max-model-len", "4096"],
+        "gpu": true,
+        "expose": 8000,
+        "env": {"HF_MODEL": "Qwen/Qwen2.5-1.5B-Instruct"}
+      }
+    }
+  ],
+  "_notes": "PLANNED Nosana job definition only - NOT DEPLOYED. Use Simple strategy, replica 1, short container timeout, stop when idle. Do not use the CLI/wallet (NOS+SOL) path. Credit spend only via Nosana Deploy account credits / API key after hackathon claim approval."
+}

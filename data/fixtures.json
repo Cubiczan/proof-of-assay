@@ -1,0 +1,104 @@
+{
+  "dataset": "SYNTHETIC FIXTURE - not real mining documents",
+  "lots": [
+    {
+      "lot_id": "LOT-001",
+      "supplier": "Fixture Supplier A",
+      "material": "Gold ore concentrate",
+      "tonnes": 820,
+      "contracted_price_usd_per_tonne": 410.0,
+      "assay_grade_gpt": 2.1,
+      "invoice_grade_gpt": 2.1,
+      "invoiced_tonnes": 820,
+      "invoiced_amount_usd": 336200.0,
+      "currency": "USD"
+    },
+    {
+      "lot_id": "LOT-002",
+      "supplier": "Fixture Supplier B",
+      "material": "Copper concentrate",
+      "tonnes": 1250,
+      "contracted_price_usd_per_tonne": 288.4,
+      "assay_grade_gpt": 1.84,
+      "invoice_grade_gpt": 1.84,
+      "invoiced_tonnes": 1250,
+      "invoiced_amount_usd": 360500.0,
+      "currency": "USD"
+    },
+    {
+      "lot_id": "LOT-003",
+      "supplier": "Fixture Supplier C",
+      "material": "Gold ore concentrate",
+      "tonnes": 1845,
+      "contracted_price_usd_per_tonne": 412.3,
+      "assay_grade_gpt": 2.41,
+      "invoice_grade_gpt": 2.85,
+      "invoiced_tonnes": 1845,
+      "invoiced_amount_usd": 893174.0,
+      "currency": "USD",
+      "planted_fault": "Invoice grade (2.85 g/t) exceeds assay certificate grade (2.41 g/t); invoiced amount exceeds contracted tonnes x price."
+    },
+    {
+      "lot_id": "LOT-004",
+      "supplier": "Fixture Supplier A",
+      "material": "Silver-bearing concentrate",
+      "tonnes": 640,
+      "contracted_price_usd_per_tonne": 195.75,
+      "assay_grade_gpt": 48.0,
+      "invoice_grade_gpt": 48.0,
+      "invoiced_tonnes": 640,
+      "invoiced_amount_usd": 125280.0,
+      "currency": "USD"
+    },
+    {
+      "lot_id": "LOT-005",
+      "supplier": "Fixture Supplier D",
+      "material": "Zinc concentrate",
+      "tonnes": 980,
+      "contracted_price_usd_per_tonne": 176.2,
+      "assay_grade_gpt": 5.2,
+      "invoice_grade_gpt": 5.2,
+      "invoiced_tonnes": 980,
+      "invoiced_amount_usd": 172676.0,
+      "currency": "USD"
+    },
+    {
+      "lot_id": "LOT-006",
+      "supplier": "Fixture Supplier E",
+      "material": "Gold ore concentrate",
+      "tonnes": 960,
+      "contracted_price_usd_per_tonne": 527.8,
+      "assay_grade_gpt": 3.02,
+      "invoice_grade_gpt": 3.02,
+      "invoiced_tonnes": 1126,
+      "invoiced_amount_usd": 604903.44,
+      "currency": "USD",
+      "planted_fault": "Invoiced tonnes (1,126 t) exceed delivered/contracted tonnes (960 t)."
+    },
+    {
+      "lot_id": "LOT-007",
+      "supplier": "Fixture Supplier F",
+      "material": "Copper concentrate",
+      "tonnes": 715,
+      "contracted_price_usd_per_tonne": 441.6,
+      "assay_grade_gpt": 2.18,
+      "invoice_grade_gpt": 2.18,
+      "invoiced_tonnes": 715,
+      "invoiced_amount_usd": 374897.25,
+      "currency": "USD",
+      "planted_fault": "Invoiced amount exceeds contracted tonnes x price (unit-price uplift not in contract fixture)."
+    },
+    {
+      "lot_id": "LOT-008",
+      "supplier": "Fixture Supplier B",
+      "material": "Lead concentrate",
+      "tonnes": 540,
+      "contracted_price_usd_per_tonne": 210.5,
+      "assay_grade_gpt": 4.6,
+      "invoice_grade_gpt": 4.6,
+      "invoiced_tonnes": 540,
+      "invoiced_amount_usd": 113670.0,
+      "currency": "USD"
+    }
+  ]
+}

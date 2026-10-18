@@ -1,0 +1,306 @@
+{
+  "mode": "FIXTURE/LOCAL",
+  "inference": "deterministic-rules (no live Nosana deployment claimed)",
+  "arweave": "NOT_ANCHORED (fixture mode; no live anchor claimed)",
+  "model_planned": "Qwen/Qwen2.5-1.5B-Instruct via vLLM on Nosana (see nosana/proof-of-assay-vllm.json)",
+  "dataset": "SYNTHETIC FIXTURE - 8 lots",
+  "total_lots": 8,
+  "clean_count": 5,
+  "exception_count": 3,
+  "cash_at_risk_usd": 289849.19,
+  "decisions": [
+    {
+      "lot_id": "LOT-001",
+      "supplier": "Fixture Supplier A",
+      "material": "Gold ore concentrate",
+      "tonnes": 820,
+      "expected_amount_usd": 336200.0,
+      "invoiced_amount_usd": 336200.0,
+      "variance_usd": 0.0,
+      "status": "CLEAN",
+      "reasons": [],
+      "cash_at_risk_usd": 0.0
+    },
+    {
+      "lot_id": "LOT-002",
+      "supplier": "Fixture Supplier B",
+      "material": "Copper concentrate",
+      "tonnes": 1250,
+      "expected_amount_usd": 360500.0,
+      "invoiced_amount_usd": 360500.0,
+      "variance_usd": 0.0,
+      "status": "CLEAN",
+      "reasons": [],
+      "cash_at_risk_usd": 0.0
+    },
+    {
+      "lot_id": "LOT-003",
+      "supplier": "Fixture Supplier C",
+      "material": "Gold ore concentrate",
+      "tonnes": 1845,
+      "expected_amount_usd": 760693.5,
+      "invoiced_amount_usd": 893174.0,
+      "variance_usd": 132480.5,
+      "status": "EXCEPTION",
+      "reasons": [
+        "Invoiced $893,174.00 != expected $760,693.50 (variance $132,480.50)",
+        "Grade mismatch: invoice 2.85 g/t vs assay 2.41 g/t"
+      ],
+      "cash_at_risk_usd": 132480.5
+    },
+    {
+      "lot_id": "LOT-004",
+      "supplier": "Fixture Supplier A",
+      "material": "Silver-bearing concentrate",
+      "tonnes": 640,
+      "expected_amount_usd": 125280.0,
+      "invoiced_amount_usd": 125280.0,
+      "variance_usd": 0.0,
+      "status": "CLEAN",
+      "reasons": [],
+      "cash_at_risk_usd": 0.0
+    },
+    {
+      "lot_id": "LOT-005",
+      "supplier": "Fixture Supplier D",
+      "material": "Zinc concentrate",
+      "tonnes": 980,
+      "expected_amount_usd": 172676.0,
+      "invoiced_amount_usd": 172676.0,
+      "variance_usd": 0.0,
+      "status": "CLEAN",
+      "reasons": [],
+      "cash_at_risk_usd": 0.0
+    },
+    {
+      "lot_id": "LOT-006",
+      "supplier": "Fixture Supplier E",
+      "material": "Gold ore concentrate",
+      "tonnes": 960,
+      "expected_amount_usd": 506688.0,
+      "invoiced_amount_usd": 604903.44,
+      "variance_usd": 98215.44,
+      "status": "EXCEPTION",
+      "reasons": [
+        "Invoiced $604,903.44 != expected $506,688.00 (variance $98,215.44)",
+        "Quantity mismatch: invoiced 1126 t vs contracted 960 t"
+      ],
+      "cash_at_risk_usd": 98215.44
+    },
+    {
+      "lot_id": "LOT-007",
+      "supplier": "Fixture Supplier F",
+      "material": "Copper concentrate",
+      "tonnes": 715,
+      "expected_amount_usd": 315744.0,
+      "invoiced_amount_usd": 374897.25,
+      "variance_usd": 59153.25,
+      "status": "EXCEPTION",
+      "reasons": [
+        "Invoiced $374,897.25 != expected $315,744.00 (variance $59,153.25)"
+      ],
+      "cash_at_risk_usd": 59153.25
+    },
+    {
+      "lot_id": "LOT-008",
+      "supplier": "Fixture Supplier B",
+      "material": "Lead concentrate",
+      "tonnes": 540,
+      "expected_amount_usd": 113670.0,
+      "invoiced_amount_usd": 113670.0,
+      "variance_usd": 0.0,
+      "status": "CLEAN",
+      "reasons": [],
+      "cash_at_risk_usd": 0.0
+    }
+  ],
+  "chain": [
+    {
+      "index": 0,
+      "type": "GENESIS",
+      "payload": {
+        "project": "Proof-of-Assay",
+        "mode": "FIXTURE/LOCAL",
+        "dataset": "SYNTHETIC FIXTURE - 8 lots"
+      },
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "30f802d4826c5669c3b78233d14943e5a48cbd6132a0634129fed91269bcf700"
+    },
+    {
+      "index": 1,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-001",
+        "supplier": "Fixture Supplier A",
+        "material": "Gold ore concentrate",
+        "tonnes": 820,
+        "expected_amount_usd": 336200.0,
+        "invoiced_amount_usd": 336200.0,
+        "variance_usd": 0.0,
+        "status": "CLEAN",
+        "reasons": [],
+        "cash_at_risk_usd": 0.0
+      },
+      "prev_hash": "30f802d4826c5669c3b78233d14943e5a48cbd6132a0634129fed91269bcf700",
+      "hash": "55d0ce88722de5e2bf85fba57f7b562ad4be4c8769ae7e97899e58b14db8df22"
+    },
+    {
+      "index": 2,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-002",
+        "supplier": "Fixture Supplier B",
+        "material": "Copper concentrate",
+        "tonnes": 1250,
+        "expected_amount_usd": 360500.0,
+        "invoiced_amount_usd": 360500.0,
+        "variance_usd": 0.0,
+        "status": "CLEAN",
+        "reasons": [],
+        "cash_at_risk_usd": 0.0
+      },
+      "prev_hash": "55d0ce88722de5e2bf85fba57f7b562ad4be4c8769ae7e97899e58b14db8df22",
+      "hash": "6342ce9b51f5fda2d9cb41eddcf15850f396126e25e7a9b72822c6a9e7c464a6"
+    },
+    {
+      "index": 3,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-003",
+        "supplier": "Fixture Supplier C",
+        "material": "Gold ore concentrate",
+        "tonnes": 1845,
+        "expected_amount_usd": 760693.5,
+        "invoiced_amount_usd": 893174.0,
+        "variance_usd": 132480.5,
+        "status": "EXCEPTION",
+        "reasons": [
+          "Invoiced $893,174.00 != expected $760,693.50 (variance $132,480.50)",
+          "Grade mismatch: invoice 2.85 g/t vs assay 2.41 g/t"
+        ],
+        "cash_at_risk_usd": 132480.5
+      },
+      "prev_hash": "6342ce9b51f5fda2d9cb41eddcf15850f396126e25e7a9b72822c6a9e7c464a6",
+      "hash": "e1f3599917f3ace013540e70ac124ee5b965343ee866f0b758577fe272f9d282"
+    },
+    {
+      "index": 4,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-004",
+        "supplier": "Fixture Supplier A",
+        "material": "Silver-bearing concentrate",
+        "tonnes": 640,
+        "expected_amount_usd": 125280.0,
+        "invoiced_amount_usd": 125280.0,
+        "variance_usd": 0.0,
+        "status": "CLEAN",
+        "reasons": [],
+        "cash_at_risk_usd": 0.0
+      },
+      "prev_hash": "e1f3599917f3ace013540e70ac124ee5b965343ee866f0b758577fe272f9d282",
+      "hash": "da32cb3984b7dbe0e0d40de52721a9ddd72fdcdb676dfbc58448c0ebca43541e"
+    },
+    {
+      "index": 5,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-005",
+        "supplier": "Fixture Supplier D",
+        "material": "Zinc concentrate",
+        "tonnes": 980,
+        "expected_amount_usd": 172676.0,
+        "invoiced_amount_usd": 172676.0,
+        "variance_usd": 0.0,
+        "status": "CLEAN",
+        "reasons": [],
+        "cash_at_risk_usd": 0.0
+      },
+      "prev_hash": "da32cb3984b7dbe0e0d40de52721a9ddd72fdcdb676dfbc58448c0ebca43541e",
+      "hash": "beb0ed1160feb01d0cae3945fbd0f58b72a10425d569f493fd041178d796e5de"
+    },
+    {
+      "index": 6,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-006",
+        "supplier": "Fixture Supplier E",
+        "material": "Gold ore concentrate",
+        "tonnes": 960,
+        "expected_amount_usd": 506688.0,
+        "invoiced_amount_usd": 604903.44,
+        "variance_usd": 98215.44,
+        "status": "EXCEPTION",
+        "reasons": [
+          "Invoiced $604,903.44 != expected $506,688.00 (variance $98,215.44)",
+          "Quantity mismatch: invoiced 1126 t vs contracted 960 t"
+        ],
+        "cash_at_risk_usd": 98215.44
+      },
+      "prev_hash": "beb0ed1160feb01d0cae3945fbd0f58b72a10425d569f493fd041178d796e5de",
+      "hash": "7261ad00baf1e0c673dcb8a2208d8ad837506134d4411974ac81a859e13c2b41"
+    },
+    {
+      "index": 7,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-007",
+        "supplier": "Fixture Supplier F",
+        "material": "Copper concentrate",
+        "tonnes": 715,
+        "expected_amount_usd": 315744.0,
+        "invoiced_amount_usd": 374897.25,
+        "variance_usd": 59153.25,
+        "status": "EXCEPTION",
+        "reasons": [
+          "Invoiced $374,897.25 != expected $315,744.00 (variance $59,153.25)"
+        ],
+        "cash_at_risk_usd": 59153.25
+      },
+      "prev_hash": "7261ad00baf1e0c673dcb8a2208d8ad837506134d4411974ac81a859e13c2b41",
+      "hash": "7cb90140b2adb8c00158770e6e4c4350f7a805b63012d83bb4902358314f805e"
+    },
+    {
+      "index": 8,
+      "type": "LOT_AUDIT",
+      "payload": {
+        "lot_id": "LOT-008",
+        "supplier": "Fixture Supplier B",
+        "material": "Lead concentrate",
+        "tonnes": 540,
+        "expected_amount_usd": 113670.0,
+        "invoiced_amount_usd": 113670.0,
+        "variance_usd": 0.0,
+        "status": "CLEAN",
+        "reasons": [],
+        "cash_at_risk_usd": 0.0
+      },
+      "prev_hash": "7cb90140b2adb8c00158770e6e4c4350f7a805b63012d83bb4902358314f805e",
+      "hash": "094f863333aa1d2893775a93c3edfa16e36e506a4d768deb48e640a22d38f588"
+    },
+    {
+      "index": 9,
+      "type": "SUMMARY",
+      "payload": {
+        "total_lots": 8,
+        "clean_count": 5,
+        "exception_count": 3,
+        "cash_at_risk_usd": 289849.19
+      },
+      "prev_hash": "094f863333aa1d2893775a93c3edfa16e36e506a4d768deb48e640a22d38f588",
+      "hash": "49f74a3a2af8ceb5c263c2d5647b5fe9833b01ab80a65e2ebfd2ebcfce0762fd"
+    },
+    {
+      "index": 10,
+      "type": "ANCHOR_PLACEHOLDER",
+      "payload": {
+        "arweave": "NOT_ANCHORED (fixture mode; no live anchor claimed)",
+        "note": "Anchor only after approved live Nosana/Arweave run; do not claim a tx in fixture mode."
+      },
+      "prev_hash": "49f74a3a2af8ceb5c263c2d5647b5fe9833b01ab80a65e2ebfd2ebcfce0762fd",
+      "hash": "907c7041a4a27a44941acf90699a019c8cfe08b0eb4d3f7ef9c3636c8c6cd5ac"
+    }
+  ],
+  "chain_length": 11,
+  "chain_head": "907c7041a4a27a44941acf90699a019c8cfe08b0eb4d3f7ef9c3636c8c6cd5ac"
+}

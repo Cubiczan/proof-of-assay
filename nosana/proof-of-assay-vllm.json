@@ -3,20 +3,31 @@
   "type": "container",
   "meta": {
     "trigger": "manual",
-    "system_resources": {"required_vram": 8192}
+    "system_resources": {
+      "required_vram": 8192
+    }
   },
   "ops": [
     {
       "type": "container/run",
       "id": "proof-of-assay-vllm",
       "args": {
-        "image": "vllm/vllm-openai:latest",
-        "cmd": ["--model", "Qwen/Qwen2.5-1.5B-Instruct", "--port", "8000", "--max-model-len", "4096"],
+        "image": "vllm/vllm-openai:v0.10.2",
+        "cmd": [
+          "--model",
+          "Qwen/Qwen2.5-1.5B-Instruct",
+          "--port",
+          "8000",
+          "--max-model-len",
+          "4096"
+        ],
         "gpu": true,
         "expose": 8000,
-        "env": {"HF_MODEL": "Qwen/Qwen2.5-1.5B-Instruct"}
+        "env": {
+          "HF_MODEL": "Qwen/Qwen2.5-1.5B-Instruct"
+        }
       }
     }
   ],
-  "_notes": "PLANNED Nosana job definition only - NOT DEPLOYED. Use Simple strategy, replica 1, short container timeout, stop when idle. Do not use the CLI/wallet (NOS+SOL) path. Credit spend only via Nosana Deploy account credits / API key after hackathon claim approval."
+  "_notes": "LIVE RUN COMPLETED 2026-10-18 and stopped after use: deployment 9K9q9zJDhoybSoeY4eC7zMnmM7eaRPRp1CG5AHpPG6py, serving job CUB9FuZkdLH2Pr7jXBhwgovkSdseQwGXpNSSQcphaaEE, NVIDIA RTX 3090 at $0.19/h, image vllm/vllm-openai:v0.10.2 serving Qwen/Qwen2.5-1.5B-Instruct. The earlier :latest deployment stalled pulling the image and was stopped. The deployment is NOT currently running. Use Simple strategy, replica 1, short container timeout, stop when idle. Do not use the CLI/wallet (NOS+SOL) path."
 }

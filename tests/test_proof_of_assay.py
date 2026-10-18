@@ -103,12 +103,32 @@ def test_nosana_job_names_qwen():
     doc = json.loads((ROOT / "nosana/proof-of-assay-vllm.json").read_text())
     assert "Qwen/Qwen2.5-1.5B-Instruct" in json.dumps(doc)
 
-def test_nosana_job_not_deployed_note():
+def test_nosana_job_live_run_stopped_note():
     doc = json.loads((ROOT / "nosana/proof-of-assay-vllm.json").read_text())
-    assert "NOT DEPLOYED" in doc["_notes"]
+    assert "LIVE RUN COMPLETED" in doc["_notes"] and "stopped" in doc["_notes"]
+    assert "9K9q9zJDhoybSoeY4eC7zMnmM7eaRPRp1CG5AHpPG6py" in doc["_notes"]
+    assert doc["ops"][0]["args"]["image"] == "vllm/vllm-openai:v0.10.2"
 
-def test_article_is_draft():
-    assert "DRAFT" in (ROOT / "ARTICLE.md").read_text()
+def test_article_discloses_synthetic_data():
+    article = (ROOT / "ARTICLE.md").read_text()
+    assert "synthetic fixtures" in article.lower()
+    assert "not yet published" in article.lower()
+
+def test_article_has_live_evidence():
+    article = (ROOT / "ARTICLE.md").read_text()
+    assert "9K9q9zJDhoybSoeY4eC7zMnmM7eaRPRp1CG5AHpPG6py" in article
+    assert "CUB9FuZkdLH2Pr7jXBhwgovkSdseQwGXpNSSQcphaaEE" in article
+    assert "yTIbmFhgUS88RNaO2W92Oy7kPigpMyRUmToOeumLSus" in article
+    # the live model answer is reported honestly as wrong
+    assert "wrong" in article.lower()
+
+def test_live_evidence_file_matches_headline_numbers():
+    doc = json.loads((ROOT / "live_evidence.json").read_text())
+    assert doc["audit"]["cash_at_risk_usd"] == 289849.19
+    assert doc["audit"]["chain_verification"] == "PASS"
+    assert doc["arweave_anchor"]["tx_id"] == "yTIbmFhgUS88RNaO2W92Oy7kPigpMyRUmToOeumLSus"
+    assert doc["arweave_anchor"]["turbo_cost_winc"] == "0"
+    assert doc["nosana_live_run"]["test_model_reply_correct"] is False
 
 def test_no_live_arweave_claim(results):
     assert "NOT_ANCHORED" in results["arweave"]

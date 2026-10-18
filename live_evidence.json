@@ -1,0 +1,49 @@
+{
+  "project": "Proof-of-Assay",
+  "evidence_date": "2026-10-18",
+  "dataset_disclosure": "SYNTHETIC FIXTURE - 8 lots. Deterministic fixture arithmetic, not real mine payables.",
+  "audit": {
+    "total_lots": 8,
+    "clean_count": 5,
+    "exception_count": 3,
+    "cash_at_risk_usd": 289849.19,
+    "chain_length": 11,
+    "chain_head": "907c7041a4a27a44941acf90699a019c8cfe08b0eb4d3f7ef9c3636c8c6cd5ac",
+    "chain_verification": "PASS"
+  },
+  "nosana_live_run": {
+    "deployment_id": "9K9q9zJDhoybSoeY4eC7zMnmM7eaRPRp1CG5AHpPG6py",
+    "first_deployment_id_stalled_and_stopped": "EoxQqgJqLABH9A5bZpUxzmJZN6gPHhzwDmGUJpmQLkZn",
+    "serving_job_id": "CUB9FuZkdLH2Pr7jXBhwgovkSdseQwGXpNSSQcphaaEE",
+    "first_job_id_failed_and_replaced": "7Xkyj1TmuzaoG7Gaoek3YshDgRpp8Q1oaDLVZKxfxsL8",
+    "gpu": "NVIDIA RTX 3090 24GB",
+    "gpu_price_usd_per_hour": 0.19,
+    "market": "CA5pMpqkYFKtme7K31pNB1s62X2SdhEv1nN9RdxKCpuQ",
+    "image": "vllm/vllm-openai:v0.10.2",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "max_model_len": 4096,
+    "endpoint_check": "GET /v1/models returned HTTP 200 at 22:00:55 UTC on 2026-10-18, about 2 minutes after deployment create",
+    "test_model_reply_exact": "CLEAN - The assay result falls within the expected range of 3.10 g/t.",
+    "test_model_reply_correct": false,
+    "test_finding": "WRONG: 2.41 g/t is about 22% below 3.10 g/t expected and should be EXCEPTION. Deterministic tolerance rules and the hash chain flagged the 3 exceptions; the raw 1.5B model does not reliably audit alone and is used only as a narration/extraction layer.",
+    "deployment_status_after_run": "stopped",
+    "stop_tx": "8ayoF3Rar1VgJ3dxFsLv6jgEeW33rhX9bxryEWvTJexTRNPZ3T8QAXFG6Z8mpJA2DVLyVdbzxF9ymv3MLxjgoy7",
+    "first_deployment_stop_tx": "3nK38ApeiLXG4h8Fv1EvE275G5fXAQmKrRBU6uVB7uDuroz8jJUNBJSEHLWCEdVcPtaTLyLE4QpgdeiZy2BcX5Tt",
+    "cost_note": "Total spend across both deployments about $0.26; balance about $69.70 of the $70 participant credit."
+  },
+  "arweave_anchor": {
+    "tx_id": "yTIbmFhgUS88RNaO2W92Oy7kPigpMyRUmToOeumLSus",
+    "gateway_url": "https://arweave.net/yTIbmFhgUS88RNaO2W92Oy7kPigpMyRUmToOeumLSus",
+    "turbo_gateway_url": "https://turbo-gateway.com/raw/yTIbmFhgUS88RNaO2W92Oy7kPigpMyRUmToOeumLSus",
+    "payload_bytes": 12473,
+    "payload_sha256": "14f0cc328daa1c82d9d85ef5f337afd8d693e3c53ef084e3a84358ab8b2432fc",
+    "turbo_cost_winc": "0",
+    "anchored_chain_head": "907c7041a4a27a44941acf90699a019c8cfe08b0eb4d3f7ef9c3636c8c6cd5ac",
+    "note": "The receipt bundle anchored on Arweave contains the full 11-entry chain whose head is anchored_chain_head. Entry 10 inside that chain is the historical anchor-placeholder slot; the live tx id is recorded here and in ARTICLE.md, outside the chain, because embedding the tx id inside the chain payload would change the chain head being anchored.",
+    "gateway_verification": "Fetched https://arweave.net/yTIbmFhgUS88RNaO2W92Oy7kPigpMyRUmToOeumLSus and https://turbo-gateway.com/raw/yTIbmFhgUS88RNaO2W92Oy7kPigpMyRUmToOeumLSus on 2026-10-18; both returned the exact 12,473-byte payload (SHA-256 match). Bundle L1 status at verification: bundle QZEaldESSXRuSBIq1sTgiszBs0c-rTTIgrLku6lGcp0, arweave.net/tx status showed 1 confirmation at check time."
+  },
+  "links": {
+    "repo": "https://github.com/icohangar-ops/proof-of-assay",
+    "verifier": "https://icohangar-lot-verifier.streamlit.app/"
+  }
+}

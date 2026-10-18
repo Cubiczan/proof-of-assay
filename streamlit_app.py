@@ -29,12 +29,18 @@ st.write(f"Entries: {len(chain)} · Head: `{chain[-1]['hash']}`")
 st.code("\n".join(f"{e['index']:>2} {e['type']:<18} {e['hash'][:16]}..." for e in chain))
 
 ok = verify_chain(chain)
-st.success("Chain verification: PASS") if ok else st.error("Chain verification: FAIL")
+if ok:
+    st.success("Chain verification: PASS")
+else:
+    st.error("Chain verification: FAIL")
 
 st.subheader("Tamper simulation")
 if st.checkbox("Tamper with one receipt (demo)"):
     bad = copy.deepcopy(chain)
     bad[3]["payload"]["invoiced_amount_usd"] = 1.00
-    st.error("Chain verification: FAIL (tampered payload detected)") if not verify_chain(bad) else st.success("Chain verification: PASS")
+    if not verify_chain(bad):
+        st.error("Chain verification: FAIL (tampered payload detected)")
+    else:
+        st.success("Chain verification: PASS")
 
 st.caption("Planned live path: Qwen2.5-1.5B-Instruct via vLLM on Nosana (nosana/proof-of-assay-vllm.json); receipts anchored on Arweave via Turbo free tier. Neither is claimed live in this fixture build.")

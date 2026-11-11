@@ -50,7 +50,7 @@ def run_audit(lots=None):
         "mode": "FIXTURE/LOCAL",
         "inference": "deterministic-rules (no live Nosana deployment claimed)",
         "arweave": "NOT_ANCHORED (fixture mode; no live anchor claimed)",
-        "model_planned": "Qwen/Qwen2.5-1.5B-Instruct via vLLM on Nosana (see nosana/proof-of-assay-vllm.json)",
+        "model_planned": "qwen2.5:7b (4-bit instruct) via Ollama on Nosana (see nosana/proof-of-assay-llm.json); prior live run used Qwen/Qwen2.5-1.5B-Instruct via vLLM (nosana/proof-of-assay-vllm.json)",
         "dataset": "SYNTHETIC FIXTURE - 8 lots",
         "total_lots": len(decisions),
         "clean_count": len(decisions) - len(exceptions),

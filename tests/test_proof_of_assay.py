@@ -97,6 +97,8 @@ def test_results_mode_fixture_local(results):
     assert results["mode"] == "FIXTURE/LOCAL"
 
 def test_model_planned_is_qwen(results):
+    assert "qwen2.5:7b" in results["model_planned"]
+    assert "proof-of-assay-llm.json" in results["model_planned"]
     assert "Qwen2.5-1.5B" in results["model_planned"]
 
 def test_nosana_job_names_qwen():
